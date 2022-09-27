@@ -336,6 +336,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1074676071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1562080302090873310, guid: ffe2652bfa7d84033834599b2783cdf5, type: 3}
+  m_PrefabInstance: {fileID: 1501248615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1074676081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074676071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751800bab7151471c93354530c18906e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1216039578
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +778,11 @@ PrefabInstance:
     - target: {fileID: 1562080302090873310, guid: ffe2652bfa7d84033834599b2783cdf5, type: 3}
       propertyPath: m_Name
       value: Character Controller Visual
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912485662498590914, guid: ffe2652bfa7d84033834599b2783cdf5, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"enemy","value":null,"typeHandle":{"Identification":"UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 2428392425573100411, guid: ffe2652bfa7d84033834599b2783cdf5, type: 3}
       propertyPath: _data._json

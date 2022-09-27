@@ -4,7 +4,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public event Action<GameObject> OnEnemySeen;
-    public event Action<GameObject> OnEnemyGone;
+    public event Action OnEnemyGone;
     
     [SerializeField] private float speed = 1f;
     [SerializeField] private float viewAngle = 120f;
@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     
     public Transform[] waypoints;
     private Renderer _renderer;
+    private GameObject _currentEnemy;
     
     private void Awake ()
     {
@@ -35,17 +36,18 @@ public class Character : MonoBehaviour
     {
         if (other.CompareTag(enemyTag))
         {
-            if (IsInViewRange(other.transform))
+            bool isInViewRange = IsInViewRange(other.transform);
+            if (!_currentEnemy && isInViewRange)
                 OnEnemySeen?.Invoke(other.gameObject);
-            else
-                OnEnemyGone?.Invoke(other.gameObject);
+            else if (other.gameObject == _currentEnemy && isInViewRange)
+                OnEnemyGone?.Invoke();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(enemyTag))
-            OnEnemyGone?.Invoke(other.gameObject);
+        if (other.CompareTag(enemyTag) && other.gameObject == _currentEnemy)
+            OnEnemyGone?.Invoke();
     }
 
     private bool IsInViewRange(Transform other)

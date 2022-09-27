@@ -27,9 +27,9 @@ public class CharacterController : MonoBehaviour
         _current.OnEnemySeen(enemy);
     }
 
-    private void OnEnemyGone(GameObject enemy)
+    private void OnEnemyGone()
     {
-        _current.OnEnemyGone(enemy);
+        _current.OnEnemyGone();
     }
 
     private void Update()
@@ -73,7 +73,7 @@ public class CharacterController : MonoBehaviour
         public virtual void Start() { }
         public virtual void Exit() { }
         public virtual void OnEnemySeen(GameObject enemy) { }
-        public virtual void OnEnemyGone(GameObject enemy) { }
+        public virtual void OnEnemyGone() { }
 
         public abstract void Update();
     }
@@ -119,7 +119,7 @@ public class CharacterController : MonoBehaviour
             _threshold = threshold;
         }
 
-        public override void OnEnemyGone(GameObject enemy)
+        public override void OnEnemyGone()
         {
             controller.MakeTransitionToPatrol();
         }
