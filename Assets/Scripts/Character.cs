@@ -30,6 +30,8 @@ public class Character : MonoBehaviour
         Debug.Log("Attack");
         _renderer.material.color = Color.red;
         Destroy(enemy);
+        _currentEnemy = null;
+        OnEnemyGone?.Invoke();
     }
 
     private void OnTriggerStay(Collider other)

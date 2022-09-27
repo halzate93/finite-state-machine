@@ -14,8 +14,8 @@ public class EventReceiver : MonoBehaviour
 
     private void Start()
     {
-        _character.OnEnemyGone += SendOnEnemyGone;
         _character.OnEnemySeen += SendOnEnemySeen;
+        _character.OnEnemyGone += SendOnEnemyGone;
     }
 
     private void SendOnEnemySeen(GameObject enemy)
